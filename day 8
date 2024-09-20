@@ -1,1 +1,23 @@
 
+
+class Solution {
+    // Function to reverse words in a given string.
+    String reverseWords(String str) {
+        // Split the string by dots
+        String[] words = str.split("\\.");
+        
+        // Reverse the array of words
+        int left = 0, right = words.length - 1;
+        while (left < right) {
+            // Swap the words
+            String temp = words[left];
+            words[left] = words[right];
+            words[right] = temp;
+            left++;
+            right--;
+        }
+        
+        // Join the words back with dots
+        return String.join(".", words);
+    }
+}
